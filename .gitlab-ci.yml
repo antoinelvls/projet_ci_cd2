@@ -1,4 +1,6 @@
 job1:
  script: echo "my first job"
  script: ping 8.8.8.8
- script: pause
+ 
+job:command:
+  script: printenv
