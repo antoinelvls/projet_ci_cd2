@@ -1,6 +1,4 @@
 job1:
  script: echo "my first job"
+ script: ping 8.8.8.8
 
-job2:
-  script: ## Appel de deux scripts de votre projet
-    - /root/home/gitlab/projet-devops/Makefile
