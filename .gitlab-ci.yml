@@ -1,4 +1,4 @@
 job1:
  script: echo "my first job"
  script: ping 8.8.8.8
-
+ script: stop 
