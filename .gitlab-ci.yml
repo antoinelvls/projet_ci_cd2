@@ -1,8 +1,5 @@
-stages:
-  - test
-  - deploy
-  - destroy
+job:1:
+  script: echo 'my first job'
 
-job:test:
-  stage: test
-  script: make test-unit
+job:2:
+  script: echo 'my second job'
