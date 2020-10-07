@@ -1,2 +1,2 @@
 job1:
-	script: echo "my first job"
+ script: echo "my first job"
