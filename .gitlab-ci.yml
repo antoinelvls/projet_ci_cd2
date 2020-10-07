@@ -1,2 +1,6 @@
 job1:
  script: echo "my first job"
+
+job:scripts:
+  script: ## Appel de deux scripts de votre projet
+    - /home/gitlab/projet-devops/Makefile
