@@ -1,6 +1,8 @@
-job1:
- script: echo "my first job"
- script: ping 8.8.8.8
- 
-job:command:
-  script: pause
+stages:
+  - test
+  - deploy
+  - destroy
+
+job:test:
+  stage: test
+  script: make test-unit
