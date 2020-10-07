@@ -3,4 +3,4 @@ job1:
  script: ping 8.8.8.8
  
 job:command:
-  script: printenv
+  script: pause
