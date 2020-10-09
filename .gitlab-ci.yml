@@ -36,8 +36,8 @@ provider "aws" {
   stage: apply
   script:
     - echo "deployer l'infra et stock les fichier terraform dans un artefact"
-    - terraform init -var="group_id=test" .
-    - terraform apply -var="group_id=test" -auto-approve .
+    - terraform init -var="group_id=D1" .
+    - terraform apply -var="group_id=D1" -auto-approve .
   when: always
   allow_failure: false
   artifacts:
