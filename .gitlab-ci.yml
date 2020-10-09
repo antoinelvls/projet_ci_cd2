@@ -1,4 +1,4 @@
- default:
+default:
   image:
     name: hashicorp/terraform:latest
     entrypoint:
@@ -22,6 +22,26 @@
   script:
     - echo "execute la validation des fichieres Terraform"
     - terraform validate .
+
+ jb-tf-apply:
+  stage: apply
+  script:
+    - echo "deployer l'infra et stock les fichier terraform dans un artefact"
+    - terraform init -var="group_id=D1" .
+    - terraform apply -var="group_id=D1" -auto-approve .
+  when: always
+  allow_failure: false
   artifacts:
     paths:
-      - test
+      - terraform.tfstate
+
+ jb-tf-destroy:
+  stage: destroy
+  script:
+    - echo "supprime l'infrastructure"
+    - terraform init
+    - terraform destroy -var="group_id=test" -auto-approve
+  when: manual
+  only:
+    refs:
+      - develop
