@@ -2,7 +2,7 @@ provider "aws" {
   region = var.aws_region
 }
 
-data "archive_file" "lambda_zip" {
+data "archive_file" "lambda_function.zip" {
   type        = "zip"
   source_file = "../Python/index.py"
   output_path = "lambda_function.zip"
