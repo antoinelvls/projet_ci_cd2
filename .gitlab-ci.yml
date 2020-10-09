@@ -14,7 +14,7 @@
 
  stages:
   - test
-  - deploy
+  - apply
   - destroy
 
 provider "aws" {
@@ -23,7 +23,7 @@ provider "aws" {
  export GROUP_ID=D1
  }
  
-  jb-tf-test:
+ jb-tf-test:
   stage: test
   script:
     - echo "execute la validation des fichieres Terraform"
@@ -33,7 +33,7 @@ provider "aws" {
       - test
 
  jb-tf-apply:
-  stage: deploy
+  stage: apply
   script:
     - echo "deployer l'infra et stock les fichier terraform dans un artefact"
     - terraform init -var="group_id=test" .
