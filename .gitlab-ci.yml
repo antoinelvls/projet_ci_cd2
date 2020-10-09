@@ -4,6 +4,7 @@
     entrypoint:
       - /usr/bin/env
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
   before_script:
     - terraform init
   cache:
@@ -21,6 +22,9 @@
   script:
     - echo "execute la validation des fichieres Terraform"
     - terraform validate .
+  artifacts:
+    paths:
+      - test
 
  jb-tf-apply:
   stage: apply
@@ -39,8 +43,14 @@
   script:
     - echo "supprime l'infrastructure"
     - terraform init
-    - terraform destroy -var="group_id=D1" -auto-approve
+    - terraform destroy -var="group_id=test" -auto-approve
   when: manual
   only:
     refs:
       - develop
+
+provider "aws" {
+ export AWS_ACCESS_KEY_ID=AKIA2G2XJY5PRHXUEGWX
+ export AWS_SECRET_ACCESS_KEY=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
+ export GROUP_ID=D1
+ }
