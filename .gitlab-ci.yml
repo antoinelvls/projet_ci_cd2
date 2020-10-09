@@ -39,7 +39,7 @@
   script:
     - echo "supprime l'infrastructure"
     - terraform init
-    - terraform destroy -var="group_id=test" -auto-approve
+    - terraform destroy -var="group_id=D1" -auto-approve
   when: manual
   only:
     refs:
