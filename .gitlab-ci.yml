@@ -23,7 +23,7 @@ provider "aws" {
  export GROUP_ID=D1
  }
  
- jb-tf-test:
+  jb-tf-test:
   stage: test
   script:
     - echo "execute la validation des fichieres Terraform"
