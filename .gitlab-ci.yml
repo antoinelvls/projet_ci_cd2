@@ -22,9 +22,6 @@
   script:
     - echo "execute la validation des fichieres Terraform"
     - terraform validate .
-  artifacts:
-    paths:
-      - test
 
  jb-tf-apply:
   stage: apply
