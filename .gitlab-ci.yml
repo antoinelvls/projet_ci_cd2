@@ -4,19 +4,12 @@
     entrypoint:
       - /usr/bin/env
       - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-
   before_script:
     - terraform init
   cache:
     key: terraform
     paths:
       - .terraform
-
-provider "aws" {
- export AWS_ACCESS_KEY_ID=AKIA2G2XJY5PRHXUEGWX
- export AWS_SECRET_ACCESS_KEY=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
- export GROUP_ID=D1
- }
 
  stages:
   - test
