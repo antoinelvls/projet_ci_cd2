@@ -4,8 +4,6 @@ provider "aws" {
   secret_key = var.AWS_SECRET_ACCESS_KEY=53X7dR90ZfLToBljtYFjaVe/PNGFgSQeHz6o3LBC
  }
 
-}
-
 data "archive_file" "lambda_zip" {
   type        = "zip"
   source_file = "../Python/index.py"
