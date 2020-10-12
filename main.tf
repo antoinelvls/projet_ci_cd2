@@ -11,7 +11,7 @@ data "archive_file" "lambda_zip" {
 }
 
 resource "aws_lambda_function" "this" {
-  function_name    = "antoine_project-${var.group_id}"
+  function_name    = "antoine.project-${var.group_id}"
 	s3_bucket				 = aws_s3_bucket.this.bucket
 	s3_key					 = "lambda_function.zip"
   role             = data.aws_iam_role.this.arn
