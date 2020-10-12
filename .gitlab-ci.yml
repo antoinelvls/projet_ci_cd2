@@ -13,33 +13,7 @@
       - .terraform
 
  stages:
-  - test
-  - apply
   - destroy
-
- jb-tf-test:
-  stage: test
-  variables:
-    AWS_ACCESS_KEY_ID: AKIA2G2XJY5PRHXUEGWX
-    AWS_SECRET_ACCESS_KEY: 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
-  script:
-    - echo "execute la validation des fichieres Terraform"
-    - terraform validate .
-
- jb-tf-apply:
-  stage: apply
-  variables:
-    AWS_ACCESS_KEY_ID: AKIA2G2XJY5PRHXUEGWX
-    AWS_SECRET_ACCESS_KEY: 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
-  script:
-    - echo "deployer l'infra et stock les fichier terraform dans un artefact"
-    - terraform init -var="group_id=d1" .
-    - terraform apply -var="group_id=d1" -auto-approve .
-  when: manual
-  allow_failure: false
-  artifacts:
-    paths:
-      - terraform.tfstate
 
  jb-tf-destroy:
   stage: destroy
