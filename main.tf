@@ -6,7 +6,7 @@ provider "aws" {
 
 data "archive_file" "lambda_zip" {
   type        = "zip"
-  source_file = "../Python/index.py"
+  source_file = "Python/index.py"
   output_path = "lambda_function.zip"
 }
 
