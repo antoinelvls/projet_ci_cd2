@@ -25,7 +25,7 @@ resource "aws_lambda_function" "this" {
 }
 
 resource "aws_s3_bucket" "this" {
-  bucket = "antoine_project-${var.group_id}"
+  bucket = "gitlab-examen1-${var.group_id}"
   acl    = "private"
 
   versioning {
