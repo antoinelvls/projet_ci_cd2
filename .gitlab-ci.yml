@@ -27,8 +27,8 @@
   stage: apply
   script:
     - echo "deployer l'infra et stock les fichier terraform dans un artefact"
-    - terraform init -var="group_id=D1" .
-    - terraform apply -var="group_id=D1" -auto-approve .
+    - terraform init -var="group_id=d1" .
+    - terraform apply -var="group_id=d1" -auto-approve .
   when: always
   allow_failure: false
   artifacts:
@@ -49,5 +49,5 @@
 provider "aws" {
  export AWS_ACCESS_KEY_ID=AKIA2G2XJY5PRHXUEGWX
  export AWS_SECRET_ACCESS_KEY=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
- export GROUP_ID=D1
+ export GROUP_ID=d1
  }
