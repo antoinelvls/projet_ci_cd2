@@ -51,7 +51,6 @@
     - echo "supprime l'infrastructure"
     - terraform init
     - terraform destroy -var="group_id=d1" -auto-approve
-  when: manual
   only:
     refs:
       - develop
