@@ -1,5 +1,9 @@
 provider "aws" {
   region = var.aws_region
+  access_key = var.AWS_ACCESS_KEY_ID=AKIA2G2XJY5PRHXUEGWX
+  secret_key = var.AWS_SECRET_ACCESS_KEY=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
+ }
+
 }
 
 data "archive_file" "lambda_zip" {
