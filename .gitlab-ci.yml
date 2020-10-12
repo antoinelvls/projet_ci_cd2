@@ -19,6 +19,9 @@
 
  jb-tf-test:
   stage: test
+  variables:
+    AWS_ACCESS_KEY_ID: AKIA2G2XJY5PRHXUEGWX
+    AWS_SECRET_ACCESS_KEY: 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
   script:
     - echo "execute la validation des fichieres Terraform"
     - terraform validate .
