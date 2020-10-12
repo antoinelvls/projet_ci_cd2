@@ -11,7 +11,7 @@ data "archive_file" "lambda_zip" {
 }
 
 resource "aws_lambda_function" "this" {
-  function_name    = "gitlab-examen2-${var.group_id}"
+  function_name    = "gitlab-examen-${var.group_id}"
 	s3_bucket				 = aws_s3_bucket.this.bucket
 	s3_key					 = "lambda_function.zip"
   role             = data.aws_iam_role.this.arn
@@ -25,7 +25,7 @@ resource "aws_lambda_function" "this" {
 }
 
 resource "aws_s3_bucket" "this" {
-  bucket = "gitlab-examen1-${var.group_id}"
+  bucket = "gitlab-examen-${var.group_id}"
   acl    = "private"
 
   versioning {
