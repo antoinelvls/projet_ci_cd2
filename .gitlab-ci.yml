@@ -35,7 +35,7 @@
     - echo "deployer l'infra et stock les fichier terraform dans un artefact"
     - terraform init -var="group_id=d1" .
     - terraform apply -var="group_id=d1" -auto-approve .
-  when: manual
+  when: always
   allow_failure: false
   artifacts:
     paths:
