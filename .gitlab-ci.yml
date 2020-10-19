@@ -40,8 +40,8 @@
 #  artifacts:
 #    paths:
 #      - terraform.tfstate
-
- jb-tf-destroy:
+  
+  jb-tf-destroy:
   stage: destroy
   variables:
     AWS_ACCESS_KEY_ID: AKIA2G2XJY5PRHXUEGWX
