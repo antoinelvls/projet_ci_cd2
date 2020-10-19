@@ -14,7 +14,7 @@
 
  stages:
   - test
-  - apply
+ # - apply
   - destroy
 
  jb-tf-test:
@@ -26,28 +26,28 @@
     - echo "execute la validation des fichieres Terraform"
     - terraform validate .
 
- jb-tf-apply:
-  stage: apply
-  variables:
-    AWS_ACCESS_KEY_ID: AKIA2G2XJY5PRHXUEGWX
-    AWS_SECRET_ACCESS_KEY: 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
-  script:
-    - echo "deployer l'infra et stock les fichier terraform dans un artefact"
-    - terraform init -var="group_id=d1" .
-    - terraform apply -var="group_id=d1" -auto-approve .
-  when: always
-  allow_failure: false
-  artifacts:
-    paths:
-      - terraform.tfstate
+# jb-tf-apply:
+#  stage: apply
+#  variables:
+#    AWS_ACCESS_KEY_ID: AKIA2G2XJY5PRHXUEGWX
+#    AWS_SECRET_ACCESS_KEY: 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
+#  script:
+#    - echo "deployer l'infra et stock les fichier terraform dans un artefact"
+#    - terraform init -var="group_id=d1" .
+#    - terraform apply -var="group_id=d1" -auto-approve .
+#  when: always
+#  allow_failure: false
+#  artifacts:
+#    paths:
+#      - terraform.tfstate
 
  jb-tf-destroy:
   stage: destroy
   variables:
     AWS_ACCESS_KEY_ID: AKIA2G2XJY5PRHXUEGWX
     AWS_SECRET_ACCESS_KEY: 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
-  
-  script:
+    script:
     - echo "supprime l'infrastructure"
     - terraform init
-    - terraform destroy -var="group_id=test" -auto-approve .
+    - terraform destroy -var="group_id=d1" -auto-approve .
+
